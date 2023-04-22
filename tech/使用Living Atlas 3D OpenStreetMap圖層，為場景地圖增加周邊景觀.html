@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!-- saved from url=(0132)http://www.esri.tw/index.php?option=com_content&view=article&id=792:living-atlas-3d-openstreetmap&catid=170:ccw-news-tech&Itemid=217 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="esri,Esri,ESRI,arcgis,ArcGIS,gis,GIS,地理資訊系統,google,Google,LBS,map,Map,MAP,地圖,雲端,物聯網,Online">
+  <meta name="title" content="使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀">
+  <meta name="author" content="南港阿牛哥">
+  <meta name="description" content="互動國際數位為台灣區 Esri 總代理商，台中、高雄皆設有辦事處，具備專業的全產品線支援能力，秉持做對、做好、整合創新之理念，致力於提供地理資訊相關服務，包含：客製化系統整合服務、應用系統開發、教育訓練、顧問諮詢等。
+已成功將 GIS 應用領域拓展至環保、防救災、管線、交通、自然資源、社會人文、衛生醫療、國防、工程應用及商業分析，未來將投入更多樣化的 GIS 應用開發，提供全方位適地性服務，將更好的 GIS 系統帶入工作與生活中。">
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management">
+  <title>使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀</title>
+  <link href="http://www.esri.tw/templates/mainpage2/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/jcemediabox.css" type="text/css">
+  <link rel="stylesheet" href="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/style.css" type="text/css">
+  <script type="text/javascript" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/mediaobject.js.下載"></script>
+  <script type="text/javascript" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/jcemediabox.js.下載"></script>
+  <script type="text/javascript" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/default.js.下載"></script>
+  <script type="text/javascript" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/twitter.js.下載"></script>
+  <script type="text/javascript" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/mootools.js.下載"></script>
+  <script type="text/javascript" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/caption.js.下載"></script>
+  <script type="text/javascript">
+	JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:"6,0,2,0",realmedia:"7,0,0,0",shockwave:"8,5,1,0"});JCEMediaBox.init({popup:{width:"",height:"",legacy:0,lightbox:0,shadowbox:0,resize:1,icons:0,overlay:1,overlayopacity:0.8,overlaycolor:"#000000",fadespeed:500,scalespeed:500,hideobjects:0,scrolling:"fixed",close:2,labels:{'close':'Close','next':'Next','previous':'Previous','cancel':'Cancel','numbers':'{$current} of {$total}'}},tooltip:{className:"tooltip",opacity:0.8,speed:150,position:"br",offsets:{x: 16, y: 16}},base:"/",imgpath:"plugins/system/jcemediabox/img",theme:"standard",themecustom:"",themepath:"plugins/system/jcemediabox/themes"});
+  </script>
+
+    
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- load jquery -->
+    <script src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/jquery-3.6.0.min.js.下載" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+    <!-- load esri calcite web -->
+    <link rel="stylesheet" href="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/calcite-web.min.css">
+    <script src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/calcite-web.min.js.下載"></script>
+
+    <!-- load ccw -->
+    <link rel="stylesheet" href="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/ccw.css">
+    <script src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/ccw.js.下載"></script>
+    <script src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/ccw-layout.js.下載"></script>
+    <script src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/ccw-components.js.下載"></script>
+
+    <!-- load bootstrap grid system -->
+<!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.css"> -->
+    <link rel="stylesheet" href="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/bootstrap-grid.min.css">
+   
+    <!-- load idt logo -->
+    <link rel="stylesheet" href="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/style(1).css">
+</head>
+<body>
+    <!-- tablet sidebar -->
+    		<div class="moduletable">
+					<!-- tablet and mobile navigation sidebar -->
+<div class="table-column-12 drawer drawer-left- js-drawer " data-drawer="top-nav-tablet-sidebar" tabindex="0">
+	<nav class="drawer-nav" role="navigation" style="width:100%;">
+		<aside class="side-nav">
+			<div class="side-nav-title font-size-2 trailer-1 bg-color-white">
+				<a class="btn btn-transparent icon-ui-close right padding-right-0 font-size-5" onclick="calcite.bus.emit(&#39;drawer:close&#39;, {id: &#39;top-nav-tablet-sidebar&#39;});">&nbsp;</a></div>
+			<!-- 首頁 --><a class="side-nav-link leader-2 padding-left-1 font-size-3 border-bottom-style-1 no-border-top" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=733&amp;catid=171&amp;Itemid=218">首頁</a> <!-- 產品 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					產品 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=734&amp;catid=137&amp;Itemid=187">ArcGIS Online</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=640&amp;catid=136&amp;Itemid=179">ArcGIS Pro</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=626&amp;catid=138&amp;Itemid=188">ArcGIS Enterprise</a> <!-- <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=736&amp;catid=165&amp;Itemid=210">ArcGIS Platform</a> --><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=737&amp;catid=167&amp;Itemid=175">ArcGIS Personal Use</a></div>
+			</div>
+			<!-- End 產品 --><!-- 方案 --><!--             <div class="ccw-dropdown js-ccw-dropdown"><div class="ccw-dropdown-title padding-left-1 font-size-3"> 方案 <span class="ccw-dropdown-icon icon-ui-down-arrow">&nbsp;</span></div><div class="ccw-dropdown-menu"><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=738&amp;catid=139&amp;Itemid=180">外業調查</a><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=739&amp;catid=140&amp;Itemid=181">遙測影像</a><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=741&amp;catid=149&amp;Itemid=189">數位雙生</a><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=740&amp;catid=141&amp;Itemid=182">物聯網大數據</a></div></div> --><!-- End 方案 --><!-- 學習 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					學習 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=742&amp;catid=153&amp;Itemid=195">開課時間</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=743&amp;catid=155&amp;Itemid=213">教學影片</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="https://learn.arcgis.com/en/gallery/">Learn ArcGIS</a></div>
+			</div>
+			<!-- End 學習 --><!-- 活動 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					活動 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=744&amp;catid=157&amp;Itemid=199">活動查詢</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=730&amp;catid=156&amp;Itemid=200"> <i>StoryMaps</i> 競賽</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="https://www.esri.com/en-us/about/events/index/overview">Esri活動</a></div>
+			</div>
+			<!-- End 活動 --><!-- 訊息 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					訊息 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=168&amp;Itemid=215">焦點訊息</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=170&amp;Itemid=217">技術精選</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="https://www.esri.com/arcgis-blog/overview/">ArcGIS Blog</a></div>
+			</div>
+			<!-- End 訊息 --><!-- 關於 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					關於 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=746&amp;catid=161&amp;Itemid=204">關於互動</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=756&amp;catid=161&amp;Itemid=204">公司據點</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=747&amp;catid=162&amp;Itemid=205">關於Esri</a></div>
+			</div>
+			<!-- End 關於 --><!-- <a class="side-nav-link" href="/">item sample</a> --></aside>
+	</nav>
+</div>
+<style type="text/css">
+.border-bottom-style-1 {
+        border-bottom: solid #a9a9a9 0.1px;
+    }
+
+    .no-border-top {
+        border-top: none;
+    }
+
+    .ccw-dropdown-link-style-1 {
+        color: #4c4c4c
+    }</style>		</div>
+	
+
+    <div class="wrapper">
+        <!-- top navigation -->
+        <div class="grid-container">
+	<div class="column-24">
+		<!-- desktop navigation -->
+		<div class="tablet-hide">
+			<a class="top-nav-title" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=733&amp;catid=171&amp;Itemid=218" id="topnav" style="margin-right: 0;"><strong><span class="icon-idtlogo">&nbsp;</span> </strong> </a>
+			<nav aria-labelledby="topnav" class="top-nav-list" id="ccw-top-nav" role="navigation">
+				<!-- 導覽:產品 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent top-nav-link font-size-0 text-bold
+					dropdown-btn js-dropdown-toggle
+					padding-left-1 padding-right-1" tabindex="0">產品</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=734&amp;catid=137&amp;Itemid=187"><b>ArcGIS Online</b> <span class="meta">GIS線上製圖與分析的領導者</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=640&amp;catid=136&amp;Itemid=179"> <b>ArcGIS Pro</b> <span class="meta">新世代桌上型GIS軟體</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=626&amp;catid=138&amp;Itemid=188"> <b>ArcGIS Enterprise</b> <span class="meta">企業級空間資訊治理雲端平台</span> </a> <!--                         <a class="dropdown-link font-size-0 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=736&amp;catid=165&amp;Itemid=210"><b>ArcGIS Platform</b><span class="meta">多樣化即用型空間服務的PaaS平台</span></a> --><a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=737&amp;catid=167&amp;Itemid=175"><b>ArcGIS for Personal Use</b> <span class="meta">個人化專屬方案</span> </a></nav>
+				</div>
+				<!-- End of 導覽:產品 --><!-- 導覽:解決方案 --><!-- <div class="dropdown js-dropdown "> --><!-- extends side-nav --><!-- <button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1" tabindex="0">方案</button> --><!-- extends side-nav --><!--                     <nav class="dropdown-menu" role="menu"><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=738&amp;catid=139&amp;Itemid=180">外業調查 </a><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=739&amp;catid=140&amp;Itemid=181"> 遙測影像 </a><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=741&amp;catid=149&amp;Itemid=189"> 數位雙生 </a><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=740&amp;catid=141&amp;Itemid=182"> 物聯網大數據 </a></nav> --><!-- </div> --><!-- End of 導覽:解決方案 --><!-- 導覽:學習 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn font-size-0 text-bold js-dropdown-toggle top-nav-link padding-left-1 padding-right-1" tabindex="0">學習</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=742&amp;catid=153&amp;Itemid=195"><b>開課時間</b> <span class="meta">實體課程時間表</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=743&amp;catid=155&amp;Itemid=213"> <b>座談影片</b> <span class="meta">深入探討ArcGIS各式主題</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="https://learn.arcgis.com/en/gallery/"> <b>Learn ArcGIS</b> <span class="meta">無時無刻都能自學(英文)</span> </a></nav>
+				</div>
+				<!-- End of 導覽:支援與服務 --><!-- 導覽:活動 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1 font-size-0 text-bold" tabindex="0">活動</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=744&amp;catid=157&amp;Itemid=199"><b>活動查詢</b> <span class="meta">當期活動資訊、歷屆活動回顧</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=730&amp;catid=156&amp;Itemid=200"> <b><i>StoryMaps</i> 競賽</b> <span class="meta">全國大專院校暨高中職 <i>StoryMap</i> 校園競賽</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="https://www.esri.com/en-us/about/events/index/overview"> <b>Esri 活動</b> <span class="meta">原廠所有活動查詢</span> </a></nav>
+				</div>
+				<!-- End of 導覽:活動 --><!-- 導覽:訊息 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1 font-size-0 text-bold" tabindex="0">訊息</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=168&amp;Itemid=215"><b>焦點訊息</b> <span class="meta">產業新聞、產品發表、重要公告</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=170&amp;Itemid=217"> <b>技術精選</b> <span class="meta">技術分享、實作經驗</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="https://www.esri.com/arcgis-blog/overview/"> <b>ArcGIS Blog</b> <span class="meta">ArcGIS 原廠部落格</span> </a></nav>
+				</div>
+				<!-- End of 導覽:訊息 --><!-- 導覽:關於 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1 font-size-0 text-bold" tabindex="0">關於</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1 text-bold" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=746&amp;catid=161&amp;Itemid=204">關於互動 </a> <a class="dropdown-link font-size-0 padding-left-1 text-bold" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=756&amp;catid=161&amp;Itemid=204"> 公司據點 </a> <a class="dropdown-link font-size-0 padding-left-1 text-bold" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=747&amp;catid=162&amp;Itemid=205"> 關於Esri </a></nav>
+				</div>
+				<!-- End of 導覽:關於 --></nav>
+			<!-- End of Navgation --></div>
+		<!-- End of tablet-hide --><!-- tablet and mobile sized navigation -->
+		<div class="tablet-show top-nav-flex">
+			<!-- user specific actions -->
+			<nav aria-labelledby="usernav" class="top-nav-flex-list" role="navigation">
+				&nbsp;</nav>
+			<!-- logo / home -->
+			<header class="top-nav-flex-title" style="display: flex; align-items: center; justify-content: center;">
+				<div href="/" id="topnav-tablet-logo">
+					<span class="icon-idtlogo font-size-6">&nbsp;</span></div>
+			</header>
+			<!-- open primary navigation drawer -->
+			<nav aria-labelledby="topnav" class="top-nav-flex-list" role="navigation">
+				<a class="icon-ui-drag-horizontal right top-nav-link js-drawer-toggle" data-drawer="top-nav-tablet-sidebar" href="http://www.esri.tw/" style="font-size: 20px;">選單</a></nav>
+		</div>
+		<!-- End of tablet-show --></div>
+	<!-- End of Column-24 --></div>
+<!-- End of Naviation -->
+<style type="text/css">
+#ccw-top-nav .dropdown-link {
+        border-top: none;
+    }
+
+    .dropdown-link .meta {
+        display: block;
+        font-size: 0.9rem;
+    }</style>
+        <!-- End of top navigation -->
+
+        <!-- subnav -->
+        
+        <!-- End of subnav -->
+
+        <!-- banner -->
+        <!-- Banner -->
+<div class="ccw-banner bg-color-dark-blue">
+	<div class="grid-container">
+		<div class="column-24">
+			<h2 class="text-color-white leader-half">
+				<b>技術精選</b></h2>
+		</div>
+	</div>
+</div>
+<!-- css -->
+<style type="text/css">
+.ccw-banner {
+    background-position: left -5px;
+}</style>
+        <!-- End of banner -->
+
+        <!-- calcite web content -->
+        <div id="ccw-content"><div class="grid-container leader-1"><div id="ccw-post-content" class="column-14 tablet-column-12 pre-2"><h1><strong>使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀</strong></h1><p>21 四月, 2023<span class="padding-left-2">阿牛哥<span></span></span></p>
+<p>
+	<img alt="" class="hide" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-b.jpg" style="width: 1920px; height: 1080px;"></p>
+<p style="text-align: justify;">
+	OpenStreetMap（簡稱OSM）是一個合作型計畫，旨在建立一張免費、可編輯的世界地圖。ArcGIS Living Atlas 網站上擁有很多從OpenStreetMap資源發佈而來豐富的內容，包括底圖和圖層。</p>
+<p style="text-align: justify;">
+	OSM 3D 場景圖層可用來建立新的場景地圖，也可用於增強現有的場景。所有的 OSM 3D圖層都是從 OSM Daylight Map 發行版而來，這些圖層由原廠Esri託管，透過 Living Atlas 網站提供，而且每月定期更新。OSM 3D 圖層包括 <a href="https://www.arcgis.com/home/item.html?id=ca0470dbbddb4db28bad74ed39949e25">OpenStreetMap 3D 建物</a>、<a href="https://www.arcgis.com/home/item.html?id=f75fef56b2d944fe92ef9f7737b4f953">OpenStreetMap 3D Trees (Thematic)</a>和<a href="https://www.arcgis.com/home/item.html?id=33383da8a75f4d24b4b6a0d0532abe6e">OpenStreetMap 3D Trees (Realistic).</a>。</p>
+<h2 id="ccw-header-01682137549775">
+	<strong>使用 OSM 3D 圖層為場景地圖增加周邊景觀</strong></h2>
+<p style="text-align: justify;">
+	您可以按照以下步驟，使用 OpenStreetMap 3D Buildings 圖層，為現有場景增加建物。你也可以使用你自己的場景或使用這個<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=b70b894566364e84ad6dedd222cebfa9">範例場景</a>，來展示俄勒岡州波特蘭市的精緻建物。你必須使用 ArcGIS Online訂閱帳號登入，才能完成以下練習。這個<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=b70b894566364e84ad6dedd222cebfa9">範例場景</a>展示了一個假想的開發案，其中會包含精緻的3D建物模型。</p>
+<p style="text-align: justify;">
+	請按照以下步驟，加入 Living Atlas OSM 3D 建築，並使用空間篩選器來排除與假想開發案重疊的建築物。</p>
+<h4 id="ccw-header-11682137549775">
+	<strong>步驟一</strong></h4>
+<p>
+	從左側工具列中，點選「Add layers」，然後點選「Browse layers」</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-2.png" style="height: 538px; width: 600px;"></p>
+<h4 id="ccw-header-21682137549775">
+	<strong>步驟二</strong></h4>
+<p style="text-align: justify;">
+	點選「Browse layers」中的「下拉選單」，選擇「Living Atlas」</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-3.png" style="width: 600px; height: 415px;"></p>
+<h4 id="ccw-header-31682137549775">
+	<strong>步驟三</strong></h4>
+<p style="text-align: justify;">
+	搜尋「OpenStreetMap」或類似的關鍵字，並在搜尋清單中找到「OpenStreetMap 3D Buildings」。接著點選(+)將圖層加入場景地圖中。然後點選「Done」完成此步驟</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-4.png" style="width: 600px; height: 348px;"></p>
+<p style="text-align: justify;">
+	加入OSM 3D 建物圖層後，您會注意到建物會重疊在精緻建物圖層上。我們可以使用空間篩選器來消除假想的精緻建物和 OSM 建物之間的重疊。</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-5.png" style="width: 600px; height: 285px;"></p>
+<h4 id="ccw-header-41682137549775">
+	<strong>步驟四</strong></h4>
+<p style="text-align: justify;">
+	隱藏「OpenStreetMap 3D建物」圖層</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-6.png" style="width: 382px; height: 175px;"></p>
+<h4 id="ccw-header-51682137549775">
+	<strong>步驟五</strong></h4>
+<p style="text-align: justify;">
+	將場景傾斜到俯視視角，瀏覽假想建物的所在範圍。</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-7.png" style="width: 600px; height: 484px;"></p>
+<h4 id="ccw-header-61682137549775">
+	<strong>步驟六</strong></h4>
+<p style="text-align: justify;">
+	開啟「OpenStreetMap 3D Buildings」圖層的功能選單，選擇「Layer properties」</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-8.png" style="width: 680px; height: 220px;"></p>
+<h4 id="ccw-header-71682137549775">
+	<strong>步驟七</strong></h4>
+<p style="text-align: justify;">
+	在properties對話視窗中最底層，點選「Configure spatial filters」</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-9.png" style="width: 363px; height: 89px;"></p>
+<h4 id="ccw-header-81682137549775">
+	<strong>步驟八</strong></h4>
+<p style="text-align: justify;">
+	確保選擇了多邊形篩選，並且模式是exclude(排除)。接著在假想的場景圖層周圍畫一個多邊形，雙擊滑鼠左鍵結束繪製多邊形。完成後，點擊「Done」。</p>
+<p style="text-align: justify;">
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-10s.png" style="width: 826px; height: 393px;"></p>
+<p>
+	此多邊形將從 OSM Buildings 圖層中，排除符合篩選條件的建物，消除重疊的特徵。再次點擊「Configure spatial filters」以進行任何調整或是增加其他排除區域。</p>
+<h4 id="ccw-header-91682137549775">
+	<strong>步驟九</strong></h4>
+<p style="text-align: justify;">
+	開啟OpenStreetMap 3D建物圖層，檢查篩選後的結果。現在，OSM 3D建物已經增加到假想建物圖層中，而且沒有重疊。</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-11s.png" style="width: 600px; height: 285px;"></p>
+<p style="text-align: justify;">
+	您可以使用相同的空間篩選條件增加<a href="https://www.arcgis.com/home/item.html?id=f75fef56b2d944fe92ef9f7737b4f953">OpenStreetMap 3D Trees (Thematic)</a>或<a href="https://www.arcgis.com/home/item.html?id=33383da8a75f4d24b4b6a0d0532abe6e">OpenStreetMap 3D Trees (Realistic)</a>兩個圖層或是其他圖層，以豐富您的場景。完成後儲存場景，並依據需求調整共享權限。<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=13eaeb10c95544139b221ea5a97de7a5">這邊可以瀏覽完成後的場景</a>。</p>
+<h3 id="ccw-header-101682137549775">
+	<strong>將場景地圖製作成Instant App</strong></h3>
+<p style="text-align: justify;">
+	透過Instant App分享您的場景是個不錯的方法。點擊左側選單中的「Instant App」，選擇「Instant App」。</p>
+<p>
+	<a href="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-12.png"><img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-12.png" style="width: 619px; height: 228px;"></a></p>
+<p style="text-align: justify;">
+	支援場景地圖的應用程式編輯器會顯示在畫面上。點擊「Preview」可預覽成果以取得第一印象；點擊「Choose」會開啟對映的應用程式編輯器，並在您的Content中建立一個新的應用程式項目。兩個不錯且簡單的應用程式選擇是「3D Viewer」和「Basic」。</p>
+<p>
+	<img alt="" src="./使用Living Atlas 3D OpenStreetMap圖層，為場景地圖增加周邊景觀_files/3dosm-13.png" style="width: 731px; height: 362px;"></p>
+<h3 class="text-head text-bold" id="ccw-header-111682137549775">
+	<strong>更多資訊</strong></h3>
+<p style="text-align: justify;">
+	欲了解更多資訊，請參閱以下網站：</p>
+<p>
+	<a href="https://livingatlas.arcgis.com/en/home/">ArcGIS Living Atlas網站</a></p>
+<p>
+	<a href="https://openstreetmap.maps.arcgis.com/home/index.html">OpenStreetMap ArcGIS Online 首頁</a></p>
+<p>
+	<a href="https://onlinelabs.maps.arcgis.com/home/group.html?id=5e0d56e27d7e4a68955d399ca96c41cb&amp;searchFacet=card+dropdown+item+details&amp;view=grid#content">OpenStreetMap 向量底圖</a>(ArcGIS Online群組)</p>
+<p>
+	<a href="https://openstreetmap.maps.arcgis.com/home/group.html?id=66d66956ab444ae89e8265f008704d4b&amp;focus=layers&amp;view=list#content">OpenStreetMap 圖層</a>(ArcGIS Online群組)</p>
+<hr>
+<p>
+	本文出處：Esri Blog | <a href="https://www.esri.com/arcgis-blog/products/arcgis-living-atlas/3d-gis/osm-3d-scene/">Use Living Atlas 3D OpenStreetMap Layers to Add Context to Scenes</a></p>
+<p>
+	原文作者： <a href="https://www.esri.com/arcgis-blog/author/bszukalski-2/">Bern Szukalski</a></p>
+<p>
+	中文譯者：阿牛哥</p>
+
+</div><div id="ccw-post-toc" class="column-6 tablet-hide"><h4 class="side-nav-title">目錄</h4><nav><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-01682137549775" class="side-nav-link padding-left-2">
+	使用 OSM 3D 圖層為場景地圖增加周邊景觀</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-11682137549775" class="side-nav-link padding-left-4">
+	步驟一</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-21682137549775" class="side-nav-link padding-left-4">
+	步驟二</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-31682137549775" class="side-nav-link padding-left-4">
+	步驟三</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-41682137549775" class="side-nav-link padding-left-4">
+	步驟四</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-51682137549775" class="side-nav-link padding-left-4">
+	步驟五</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-61682137549775" class="side-nav-link padding-left-4">
+	步驟六</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-71682137549775" class="side-nav-link padding-left-4">
+	步驟七</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-81682137549775" class="side-nav-link padding-left-4">
+	步驟八</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-91682137549775" class="side-nav-link padding-left-4">
+	步驟九</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-101682137549775" class="side-nav-link padding-left-3">
+	將場景地圖製作成Instant App</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#ccw-header-111682137549775" class="side-nav-link padding-left-3">
+	更多資訊</a></nav><div class=" scroll-show padding-left-6 js-shim" data-top="50" data-sticky-id="7101984c-b3fd-4d1d-daaa-dbe0ec92ded6" style="top: 50px; visibility: hidden; display: none;"><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#" class="right btn btn-gray btn-clear">返回頂端</a></div><div class="js-sticky scroll-show padding-left-6" data-top="50" data-sticky-id="7101984c-b3fd-4d1d-daaa-dbe0ec92ded6" style="top: 50px;"><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#" class="right btn btn-gray btn-clear">返回頂端</a></div></div></div></div>
+        <!-- End of ccw-content -->
+
+        <!-- jdoc source content -->
+        <div id="jv-source-content"></div>
+        
+        <!-- sale dialog -->
+        <!-- Modal -->
+<div class="js-modal modal-overlay modifier-class" data-modal="contact-for-buy">
+	<div aria-labelledby="modal" class="modal-content column-18 phone-column-6" role="dialog">
+		<!-- close button --><a aria-label="close-modal" class="js-modal-toggle right" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#"><svg class="svg-icon" height="21" viewBox="0 0 32 32" width="21" xmlns="http://www.w3.org/2000/svg"> <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"></path> </svg> </a>
+		<h2 class="trailer-half text-bolder trailer-2">
+			詢價與購買</h2>
+		<p class="text-justify">
+			來電洽詢：&nbsp;&nbsp;02-26585858 分機 6661</p>
+		<p class="text-justify">
+			來信洽詢：&nbsp;&nbsp; <a class="market_mail" href="mailto:marketing@igis.com.tw">marketing@igis.com.tw</a></p>
+		<!-- content: desktop show -->
+		<p class="text-justify tablet-hide">
+			紛絲團洽詢： <a href="https://www.facebook.com/esri.tw" target="_blank">Facebook 官方粉絲團</a></p>
+		<!-- content: tablet and phone show -->
+		<p class="text-justify desktop-hide tablet-show">
+			紛絲團洽詢： <a href="fb://page/?id=435038589846254">Facebook 官方粉絲團</a></p>
+		<!-- close button -->
+		<div class="text-right">
+			<button class="btn js-modal-toggle">關閉視窗</button></div>
+	</div>
+</div>
+<!-- 課程報名對話視窗 -->
+<div class="js-modal modal-overlay" data-modal="contact-for-train">
+	<div aria-labelledby="modal" class="modal-content" role="dialog">
+		<div class="column-12">
+			<!-- 對話視窗右上角的 X --><a aria-label="close-modal" class="js-modal-toggle right" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#"><svg class="svg-icon" height="21" viewBox="0 0 32 32" width="21" xmlns="http://www.w3.org/2000/svg"> <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"></path> </svg> </a>
+			<h4 class="text-head text-bold">
+				報名方式</h4>
+			<p>
+				請聯絡業務人員 <b>盧小姐</b></p>
+			<p>
+				服務專線1： (02) 2658-5858 分機6632</p>
+			<p>
+				服務專線2： 0912-887-332</p>
+			<p>
+				服務信箱 ： <a class="sales_mail" href="mailto:sales@igis.com.tw">sales@igis.com.tw</a></p>
+			<button class="btn btn-default js-modal-toggle">關閉視窗</button></div>
+	</div>
+</div>
+<script>
+    ccw.addOnLoadEvent(function() {
+        $(".market_mail")
+            .text("marketing@igis.com.tw")
+            .attr("href", "mailto:marketing@igis.com.tw");
+        $(".sales_mail")
+            .text("sales@igis.com.tw")
+            .attr("href", "mailto:sales@igis.com.tw");
+        $(".support_mail")
+            .text("support@igis.com.tw")
+            .attr("href", "mailto:support@igis.com.tw");
+    });
+</script>
+        <!-- End of sale dialog -->
+        
+        
+        
+
+    </div><!-- End of wrapper -->
+
+    <!-- footer -->
+    <!-- footer -->
+<footer class="footer leader-3">
+	<div class="grid-container">
+		<!-- Logo & Social Section -->
+		<nav class="column-6 tablet-column-12">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size-5">
+					<strong><span class="icon-idtlogo">&nbsp;</span></strong>
+				</h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<strong>聯絡我們</strong></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">訂購專線</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">服務專線</a></li>
+				</ul>
+				<p class="leader-1 font-size--2">
+					<strong>追蹤我們</strong></p>
+				<section class="footer-social-nav">
+					&nbsp;</section>
+			</div>
+			<!-- Tablet and phone show -->
+			<div class="tablet-show tablet-column-10">
+				<div class="tablet-column-4">
+					<h6 class="font-size-5">
+						<strong><span class="icon-idtlogo">&nbsp;</span> </strong>
+					</h6>
+					<ul class="list-plain font-size--2">
+						<li>
+							<strong>聯絡我們</strong></li>
+						<li>
+							<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">訂購專線</a></li>
+						<li>
+							<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">服務專線</a></li>
+					</ul>
+				</div>
+				<div class="tablet-column-4">
+					&nbsp;</div>
+			</div>
+		</nav>
+		<nav class="column-6 tablet-column-6 leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>ArcGIS</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">About ArcGIS</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">ArcGIS Desktop</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">ArcGIS Enterprise</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">ArcGIS Online</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">Apps</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">如何購買</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="806c7404-680d-f03f-3e39-e1c670756382">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>ArcGIS</strong></h4>
+						<div class="accordion-content" id="806c7404-680d-f03f-3e39-e1c670756382">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">About ArcGIS</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">ArcGIS Desktop</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">ArcGIS Enterprise</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">ArcGIS Online</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">Apps</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">如何購買</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+		<!-- 社群 -->
+		<nav class="column-6 tablet-column-6 leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>社群</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="https://community.esri.com/">Esri 社群 (GeoNet)</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/en-us/about/events/index/overview">Esri 活動</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">idt 活動</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/arcgis-blog/overview/">ArcGIS Blog</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="fef4f97f-f730-9310-8a1b-e5c135075c05">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>社群</strong></h4>
+						<div class="accordion-content" id="fef4f97f-f730-9310-8a1b-e5c135075c05">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://community.esri.com/">Esri 社群 (GeoNet)</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/en-us/about/events/index/overview">Esri 活動</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">idt 活動</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/arcgis-blog/overview/">ArcGIS Blog</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+		<!-- 瞭解 GIS -->
+		<nav class="column-6 tablet-column-6 leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>瞭解 GIS</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">什麼是 GIS?</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">教育訓練</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/about/newsroom/publications/wherenext/">Maps Web Love</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/about/newsroom/blog/">Esri 部落格</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/about/newsroom/publications/wherenext/">WhereNext 雜誌</a></li>
+					<li>
+						<a class="link-off-black" href="https://learn-arcgis-learngis.hub.arcgis.com/">Learn ArcGIS</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="b5113e2f-37a1-0d1f-1aca-2332130b0fb2">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>瞭解 GIS</strong></h4>
+						<div class="accordion-content" id="b5113e2f-37a1-0d1f-1aca-2332130b0fb2">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">什麼是 GIS?</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">教育訓練</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/about/newsroom/publications/wherenext/">Maps Web Love</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/about/newsroom/blog/">Esri 部落格</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/about/newsroom/publications/wherenext/">WhereNext 雜誌</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://learn-arcgis-learngis.hub.arcgis.com/">Learn ArcGIS</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+		<!-- 公司 -->
+		<nav class="column-6 tablet-column-6  leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>公司</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">了解互動</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">了解Esri</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">聯絡我們</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="1da8f8e7-32df-6858-9855-cdeb62dbaa22">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>公司</strong></h4>
+						<div class="accordion-content" id="1da8f8e7-32df-6858-9855-cdeb62dbaa22">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">了解互動</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">了解Esri</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">聯絡我們</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+	</div>
+	<div class="grid-container">
+		<div class="column-24">
+			<hr>
+			<div class="column-8 tablet-hide">
+				<p class="btn">
+					繁體中文&nbsp;</p>
+			</div>
+			<div class="column-16 font-size--2">
+				<a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">隱私權政策</a> <a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">法律聲明</a> <a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">網站地圖</a> <a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=792:living-atlas-3d-openstreetmap&amp;catid=170:ccw-news-tech&amp;Itemid=217#">Terms and Conditions</a></div>
+		</div>
+	</div>
+	<!-- End of grid-container --></footer>
+<!-- End of footer -->
+   
+    <!-- interactive patterns need to be initialized -->
+    <script>
+       ccw.addOnLoadEvent(calcite.init);
+    </script>
+
+</body></html>
