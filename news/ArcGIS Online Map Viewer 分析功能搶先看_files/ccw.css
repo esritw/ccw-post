@@ -1,0 +1,452 @@
+/*=========================
+    joomla layout modify
+ ==========================*/
+#jv-source-content {
+    display: none;
+}
+/*=============================
+    end of joomla layout
+ ==============================*/
+/*=========================
+   imge
+ ==========================*/
+.img-height-100 { height: 100%; }
+.img-width-100 { width: 100%; }
+
+.img-align-top { vertical-align: top; }
+.img-align-middle { vertical-align: middle; }
+.img-align-baseline { vertical-align: baseline; }
+.img-align-baseline { vertical-align: bottom; }
+
+.img-icon { max-height: 2rem; vertical-align: middle;}
+.img-circle {  border-radius: 50%; }
+/*=========================
+    end of image
+ ==========================*/
+/*=========================
+    navigation
+ ==========================*/
+/*---- top navgation ---*/
+#topnav {
+    padding-bottom: 0px;
+}
+
+#topnav .icon-idtlogo {
+    font-size: 26px;
+}
+
+.top-nav-link:focus {
+    outline: black auto 1px;
+}
+
+#topnav-tablet-logo {
+    padding: 0;
+}
+
+/*---- footer navgation ---*/
+.footer .accordion {
+    border: none;
+    background-color: transparent;
+}
+
+.footer .accordion .accordion-title {
+    border: none;
+}
+
+.ccw-footer-tablet-menu-link {
+    /*box-shadow: inset 0 -1px 0 0 #e0e0e0;*/
+    color: #595959;
+    display: block;
+    padding-left: 2rem;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+/*=============================
+    end navigation
+ ==============================*/
+
+/*=========================
+    horizontal line
+ ==========================*/
+hr.separator {
+    border-top: none;
+    width: 40px;
+    height: 2px;
+    background-color: #974dff;
+}
+
+hr.separator.center {
+    margin: 15px auto 20px;
+}
+/*=============================
+    end horizontal line
+ ==============================*/
+
+/*=============================
+    Typograph
+ ==============================*/
+h1, h2, h3, h4, h5, h6 { font-family:Helvetica,Arial,Microsoft Yahei,SimSun,STXihei,sans-serif }
+p.no-bottom-margin { margin-bottom: 0; }
+.text-head { font-family:Helvetica,Arial,Microsoft Yahei,SimSun,STXihei,sans-serif } 
+.text-lighter { font-weight: 100; }
+.text-normal  { font-weight: 400; }
+.text-bold    { font-weight: 700; }
+.text-bolder  { font-weight: 900; }
+.text-trailer-0 { margin-bottom: 0; }
+.text-justify { text-align: justify; }
+#ccw-post-content p { line-height: 2rem; }
+/*=============================
+    End Typograph
+ ==============================*/
+
+/*=============================
+    Grid
+ ==============================*/
+.padding-left-5 { padding-left: 5rem; }
+.padding-left-6 { padding-left: 6rem; }
+.padding-left-0 { padding-left: 0; }
+.padding-right-0 { padding-right: 0; }
+.pre-0 { margin-left: 0; }
+.post-0 { margin-right: 0; }
+
+.order-1 { order: 1 }
+.order-2 { order: 2 }
+.order-3 { order: 3 }
+.order-4 { order: 4 }
+.order-5 { order: 5 }
+.order-6 { order: 6 }
+@media screen and (max-width: 768px) {
+    .order-sm-1 { order: 1 }
+    .order-sm-2 { order: 2 }
+    .order-sm-3 { order: 3 }
+    .order-sm-4 { order: 4 }
+    .order-sm-5 { order: 5 }
+    .order-sm-6 { order: 6 }
+}
+@media screen and (min-width: 768px and max-width: 992px) {
+    .order-md-1 { order: 1 }
+    .order-md-2 { order: 2 }
+    .order-md-3 { order: 3 }
+    .order-md-4 { order: 4 }
+    .order-md-5 { order: 5 }
+    .order-md-6 { order: 6 }
+}
+@media screen and (min-width: 992px and max-width:  1200px) {
+    .order-lg-1 { order: 1 }
+    .order-lg-2 { order: 2 }
+    .order-lg-3 { order: 3 }
+    .order-lg-4 { order: 4 }
+    .order-lg-5 { order: 5 }
+    .order-lg-6 { order: 6 }
+}
+@media screen and (min-width: 1200px) {
+    .order-xl-1 { order: 1 }
+    .order-xl-2 { order: 2 }
+    .order-xl-3 { order: 3 }
+    .order-xl-4 { order: 4 }
+    .order-xl-5 { order: 5 }
+    .order-xl-6 { order: 6 }
+}
+/*=============================
+    End Grid
+ ==============================*/
+
+/*=============================
+    Button
+ ==============================*/
+.btn-gray { color: #a9a9a9; border-color: #a9a9a9; }
+.btn-gray:hover { color: white; border-color: #a9a9a9; background-color: #a9a9a9; }
+/*=============================
+    End Button
+ ==============================*/
+
+/*======================
+    ccw-subnav
+ =======================*/
+.ccw-subnav {
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.ccw-subnav .third-nav-link {
+    display: inline-block;
+    color: white;
+}
+
+.ccw-subnav .ccw-subnav-title {
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+}
+
+.ccw-subnav .ccw-subnav-title:hover {
+    text-decoration: none;
+}
+
+.ccw-subnav .right .third-nav-link {
+    padding: .85rem 20px;
+    margin: 0;
+}
+
+.ccw-subnav .right .third-nav-link:hover {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.95);
+    box-shadow: inset 0 -3px 0 0 #974DFF;
+}
+
+.ccw-subnav-active {
+    background-color: black;
+    box-shadow: inset 0 -3px 0 0 #974DFF;
+}
+/*=========================
+    end of ccw-subnav
+ ==========================*/
+
+/*=========================
+    ccw-dropdown
+ ==========================*/
+.ccw-dropdown .ccw-dropdown-title {
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+}
+
+.ccw-dropdown .ccw-dropdown-menu {
+    display: none;
+}
+
+.ccw-dropdown .ccw-dropdown-menu.ccw-active {
+    display: block;
+}
+
+.ccw-dropdown .ccw-dropdown-menu .ccw-dropdown-link {
+    display: block;
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+    text-decoration: none;
+}
+
+/* ccw-dropdown dark theme */
+.ccw-dropdown.ccw-dark .ccw-dropdown-title {
+    color: white;
+}
+
+.ccw-dropdown.ccw-dark .ccw-dropdown-menu .ccw-dropdown-link {
+    color: #f8f8f8;
+}
+/*=============================
+    end of ccw-dropdown
+ ==============================*/
+
+/*=========================
+    ccw-tab
+ ==========================*/
+.ccw-tab { cursor: pointer; }
+
+.ccw-tab-style-1 { border: solid .5px #0079c1; }
+.ccw-tab-style-1:hover { box-shadow: inset 0px 0px 8px 0px #0079c1; }
+.ccw-tab-style-1.is-active {
+    box-shadow: inset 0px 0px 8px 0px #eee;
+    background-color: #0079c1;
+    color: #fff;
+}
+
+.ccw-tab-style-2 { box-shadow: inset 0px -4px 0px 0px #eee; }
+.ccw-tab-style-2:hover { box-shadow: inset 0px -4px 0px 0px #0079c1; }
+.ccw-tab-style-2.is-active { 
+    color: #0079c1; 
+    box-shadow: inset 0px -4px 0px 0px #0079c1; 
+}
+
+.ccw-tab-panel { display: none; }
+.ccw-tab-panel.is-active { display: block; }
+
+/*=============================
+    end of ccw-tab
+ ==============================*/
+
+
+/* ==============================
+    card thumb zoom effect
+ ==============================*/
+.card-image-wrap {
+    overflow: hidden;
+}
+.card-image-wrap img {
+    transform: scale(1, 1);
+    transition: all .5s ease-out;
+    object-fit: cover;
+    object-position: top;
+    height: 150px;
+}
+.card-image-wrap img:hover {
+    transform: scale(1.1, 1.1);
+}
+/* ==============================
+    end card thumb zoom effect
+ ==============================*/
+
+/* ==============================
+    post toc navgation
+ ==============================*/
+#ccw-post-toc .side-nav-link { 
+    border-top: none; 
+}
+/* ==============================
+    end post toc navgation
+ ==============================*/
+
+/* ==============================
+    response table
+ ==============================*/
+.ccw-table-response td { 
+    padding-top: 1.5rem!important; 
+    padding-bottom: 1.5rem!important;
+    vertical-align:  middle!important;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    .ccw-table-response, 
+    .ccw-table-response thead, 
+    .ccw-table-response tbody, 
+    .ccw-table-response th, 
+    .ccw-table-response td, 
+    .ccw-table-response tr {
+        display: block;
+    }
+
+    .ccw-table-response {
+        border: none;
+    }
+
+    .ccw-table-response thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .ccw-table-response tr {
+        border: solid 1px #56A5D8;
+        margin-bottom: 2rem;
+    }
+
+    .ccw-table-response td {
+        border: none!important;
+        position: relative!important;
+        padding-top: 0!important; 
+        padding-bottom: 0!important;
+        line-height: 2rem!important;
+        text-align: center;
+    }
+    
+    .ccw-table-response tr:last-child {
+        border-bottom: solid 1px;
+    }
+    
+    .ccw-table-response.table-blue tr:last-child {
+        border-bottom: 1px solid #0079c1;
+    }
+}
+/* ==============================
+    end response table
+ ==============================*/
+
+/*============================
+    Palette
+ =============================*/
+
+/*----------------------
+ * background color
+ *----------------------*/
+.bg-color-white         { background-color: #fff; }
+.bg-color-off-white     { background-color: #f8f8f8; }
+.bg-color-lightest-gray { background-color: #efefef; }
+.bg-color-lighter-gray  { background-color: #ccc; }
+.bg-color-light-gray    { background-color: #a9a9a9; }
+.bg-color-gray 			{ background-color: #959595; }
+.bg-color-dark-gray 	{ background-color: #828282; }
+.bg-color-darker-gray 	{ background-color: #6e6e6e; }
+.bg-color-darkest-gray 	{ background-color: #595959; }
+.bg-color-off-black 	{ background-color: #4c4c4c; }
+.bg-color-transparent-black { background-color: rgba(0,0,0,0.75); }
+.bg-color-black 		{ background-color: #323232; }
+
+.bg-color-lightest-blue { background-color: #d2e9f9; }
+.bg-color-lighter-blue 	{ background-color: #bcdaed; }
+.bg-color-light-blue 	{ background-color: #56a5d8; }
+.bg-color-blue 			{ background-color: #0079c1; }
+.bg-color-dark-blue 	{ background-color: #005e95; }
+
+.bg-color-light-green 	{ background-color: #9bc19c; }
+.bg-color-green 		{ background-color: #5a9359; }
+.bg-color-dark-green 	{ background-color: #338033; }
+
+.bg-color-light-red 	{ background-color: #e4a793; }
+.bg-color-red 			{ background-color: #de2900; }
+.bg-color-dark-red 		{ background-color: #ab3c16; }
+
+.bg-color-light-orange 	{ background-color: #e8912e; }
+.bg-color-orange 		{ background-color: #d17e21; }
+.bg-color-dark-orange 	{ background-color: #ad6511; }
+
+.bg-color-light-yellow 	{ background-color: #efe397; }
+.bg-color-yellow 		{ background-color: #e4d154; }
+.bg-color-dark-yellow 	{ background-color: #d9bf2b; }
+
+.bg-color-light-purple 	{ background-color: #c4bcdc; }
+.bg-color-purple 		{ background-color: #9081bc; }
+.bg-color-dark-purple 	{ background-color: #7461a8; }
+
+.bg-color-light-brown 	{ background-color: #d2b38f; }
+.bg-color-brown 		{ background-color: #a57946; }
+.bg-color-dark-brown 	{ background-color: #8c5e2a; }
+
+/*----------------------
+ * text color
+ *----------------------*/
+.text-color-white         	{ color: #fff; }
+.text-color-off-white     	{ color: #f8f8f8; }
+.text-color-lightest-gray 	{ color: #efefef; }
+.text-color-lighter-gray  	{ color: #ccc; }
+.text-color-light-gray    	{ color: #a9a9a9; }
+.text-color-gray 			{ color: #959595; }
+.text-color-dark-gray 		{ color: #828282; }
+.text-color-darker-gray 	{ color: #6e6e6e; }
+.text-color-darkest-gray 	{ color: #595959; }
+.text-color-off-black 		{ color: #4c4c4c; }
+.text-color-transparent-black { color: rgba(0,0,0,0.75); }
+.text-color-black 			{ color: #323232; }
+
+.text-color-lightest-blue 	{ color: #d2e9f9; }
+.text-color-lighter-blue 	{ color: #bcdaed; }
+.text-color-light-blue 		{ color: #56a5d8; }
+.text-color-blue 			{ color: #0079c1; }
+.text-color-dark-blue 		{ color: #005e95; }
+
+.text-color-light-green 	{ color: #9bc19c; }
+.text-color-green 			{ color: #5a9359; }
+.text-color-dark-green 		{ color: #338033; }
+
+.text-color-light-red 		{ color: #e4a793; }
+.text-color-red 			{ color: #de2900; }
+.text-color-dark-red 		{ color: #ab3c16; }
+
+.text-color-light-orange 	{ color: #e8912e; }
+.text-color-orange 			{ color: #d17e21; }
+.text-color-dark-orange 	{ color: #ad6511; }
+
+.text-color-light-yellow 	{ color: #efe397; }
+.text-color-yellow 			{ color: #e4d154; }
+.text-color-dark-yellow 	{ color: #d9bf2b; }
+
+.text-color-light-purple 	{ color: #c4bcdc; }
+.text-color-purple 			{ color: #9081bc; }
+.text-color-dark-purple 	{ color: #7461a8; }
+
+.text-color-light-brown 	{ color: #d2b38f; }
+.text-color-brown 			{ color: #a57946; }
+.text-color-dark-brown 		{ color: #8c5e2a; }
+
+/*============================
+    End  Palette
+ =============================*/

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<!-- saved from url=(0132)http://www.esri.tw/index.php?option=com_content&view=article&id=789:arcgis-online-map-viewer-&catid=168:ccw-news-lastnews&Itemid=215 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="esri,Esri,ESRI,arcgis,ArcGIS,gis,GIS,地理資訊系統,google,Google,LBS,map,Map,MAP,地圖,雲端,物聯網,Online">
+  <meta name="title" content="ArcGIS Online Map Viewer 分析功能搶先看">
+  <meta name="author" content="南港阿牛哥">
+  <meta name="description" content="互動國際數位為台灣區 Esri 總代理商，台中、高雄皆設有辦事處，具備專業的全產品線支援能力，秉持做對、做好、整合創新之理念，致力於提供地理資訊相關服務，包含：客製化系統整合服務、應用系統開發、教育訓練、顧問諮詢等。
+已成功將 GIS 應用領域拓展至環保、防救災、管線、交通、自然資源、社會人文、衛生醫療、國防、工程應用及商業分析，未來將投入更多樣化的 GIS 應用開發，提供全方位適地性服務，將更好的 GIS 系統帶入工作與生活中。">
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management">
+  <title>ArcGIS Online Map Viewer 分析功能搶先看</title>
+  <link href="http://www.esri.tw/templates/mainpage2/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="./ArcGIS Online Map Viewer 分析功能搶先看_files/jcemediabox.css" type="text/css">
+  <link rel="stylesheet" href="./ArcGIS Online Map Viewer 分析功能搶先看_files/style.css" type="text/css">
+  <script type="text/javascript" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/mediaobject.js.下載"></script>
+  <script type="text/javascript" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/jcemediabox.js.下載"></script>
+  <script type="text/javascript" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/default.js.下載"></script>
+  <script type="text/javascript" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/twitter.js.下載"></script>
+  <script type="text/javascript" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/mootools.js.下載"></script>
+  <script type="text/javascript" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/caption.js.下載"></script>
+  <script type="text/javascript">
+	JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:"6,0,2,0",realmedia:"7,0,0,0",shockwave:"8,5,1,0"});JCEMediaBox.init({popup:{width:"",height:"",legacy:0,lightbox:0,shadowbox:0,resize:1,icons:0,overlay:1,overlayopacity:0.8,overlaycolor:"#000000",fadespeed:500,scalespeed:500,hideobjects:0,scrolling:"fixed",close:2,labels:{'close':'Close','next':'Next','previous':'Previous','cancel':'Cancel','numbers':'{$current} of {$total}'}},tooltip:{className:"tooltip",opacity:0.8,speed:150,position:"br",offsets:{x: 16, y: 16}},base:"/",imgpath:"plugins/system/jcemediabox/img",theme:"standard",themecustom:"",themepath:"plugins/system/jcemediabox/themes"});
+  </script>
+
+    
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- load jquery -->
+    <script src="./ArcGIS Online Map Viewer 分析功能搶先看_files/jquery-3.6.0.min.js.下載" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+    <!-- load esri calcite web -->
+    <link rel="stylesheet" href="./ArcGIS Online Map Viewer 分析功能搶先看_files/calcite-web.min.css">
+    <script src="./ArcGIS Online Map Viewer 分析功能搶先看_files/calcite-web.min.js.下載"></script>
+
+    <!-- load ccw -->
+    <link rel="stylesheet" href="./ArcGIS Online Map Viewer 分析功能搶先看_files/ccw.css">
+    <script src="./ArcGIS Online Map Viewer 分析功能搶先看_files/ccw.js.下載"></script>
+    <script src="./ArcGIS Online Map Viewer 分析功能搶先看_files/ccw-layout.js.下載"></script>
+    <script src="./ArcGIS Online Map Viewer 分析功能搶先看_files/ccw-components.js.下載"></script>
+
+    <!-- load bootstrap grid system -->
+<!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.css"> -->
+    <link rel="stylesheet" href="./ArcGIS Online Map Viewer 分析功能搶先看_files/bootstrap-grid.min.css">
+   
+    <!-- load idt logo -->
+    <link rel="stylesheet" href="./ArcGIS Online Map Viewer 分析功能搶先看_files/style(1).css">
+</head>
+<body>
+    <!-- tablet sidebar -->
+    		<div class="moduletable">
+					<!-- tablet and mobile navigation sidebar -->
+<div class="table-column-12 drawer drawer-left- js-drawer " data-drawer="top-nav-tablet-sidebar" tabindex="0">
+	<nav class="drawer-nav" role="navigation" style="width:100%;">
+		<aside class="side-nav">
+			<div class="side-nav-title font-size-2 trailer-1 bg-color-white">
+				<a class="btn btn-transparent icon-ui-close right padding-right-0 font-size-5" onclick="calcite.bus.emit(&#39;drawer:close&#39;, {id: &#39;top-nav-tablet-sidebar&#39;});">&nbsp;</a></div>
+			<!-- 首頁 --><a class="side-nav-link leader-2 padding-left-1 font-size-3 border-bottom-style-1 no-border-top" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=733&amp;catid=171&amp;Itemid=218">首頁</a> <!-- 產品 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					產品 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=734&amp;catid=137&amp;Itemid=187">ArcGIS Online</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=640&amp;catid=136&amp;Itemid=179">ArcGIS Pro</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=626&amp;catid=138&amp;Itemid=188">ArcGIS Enterprise</a> <!-- <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=736&amp;catid=165&amp;Itemid=210">ArcGIS Platform</a> --><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=737&amp;catid=167&amp;Itemid=175">ArcGIS Personal Use</a></div>
+			</div>
+			<!-- End 產品 --><!-- 方案 --><!--             <div class="ccw-dropdown js-ccw-dropdown"><div class="ccw-dropdown-title padding-left-1 font-size-3"> 方案 <span class="ccw-dropdown-icon icon-ui-down-arrow">&nbsp;</span></div><div class="ccw-dropdown-menu"><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=738&amp;catid=139&amp;Itemid=180">外業調查</a><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=739&amp;catid=140&amp;Itemid=181">遙測影像</a><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=741&amp;catid=149&amp;Itemid=189">數位雙生</a><a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="/index.php?option=com_content&amp;view=article&amp;id=740&amp;catid=141&amp;Itemid=182">物聯網大數據</a></div></div> --><!-- End 方案 --><!-- 學習 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					學習 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=742&amp;catid=153&amp;Itemid=195">開課時間</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=743&amp;catid=155&amp;Itemid=213">教學影片</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="https://learn.arcgis.com/en/gallery/">Learn ArcGIS</a></div>
+			</div>
+			<!-- End 學習 --><!-- 活動 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					活動 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=744&amp;catid=157&amp;Itemid=199">活動查詢</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=730&amp;catid=156&amp;Itemid=200"> <i>StoryMaps</i> 競賽</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="https://www.esri.com/en-us/about/events/index/overview">Esri活動</a></div>
+			</div>
+			<!-- End 活動 --><!-- 訊息 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					訊息 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=168&amp;Itemid=215">焦點訊息</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=170&amp;Itemid=217">技術精選</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="https://www.esri.com/arcgis-blog/overview/">ArcGIS Blog</a></div>
+			</div>
+			<!-- End 訊息 --><!-- 關於 -->
+			<div class="ccw-dropdown js-ccw-dropdown">
+				<div class="ccw-dropdown-title padding-left-1 font-size-3 border-bottom-style-1">
+					關於 <span class="ccw-dropdown-icon icon-ui-down-arrow right padding-right-1">&nbsp;</span></div>
+				<div class="ccw-dropdown-menu">
+					<a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=746&amp;catid=161&amp;Itemid=204">關於互動</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=756&amp;catid=161&amp;Itemid=204">公司據點</a> <a class="ccw-dropdown-link ccw-dropdown-link-style-1 font-size-1 padding-left-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=747&amp;catid=162&amp;Itemid=205">關於Esri</a></div>
+			</div>
+			<!-- End 關於 --><!-- <a class="side-nav-link" href="/">item sample</a> --></aside>
+	</nav>
+</div>
+<style type="text/css">
+.border-bottom-style-1 {
+        border-bottom: solid #a9a9a9 0.1px;
+    }
+
+    .no-border-top {
+        border-top: none;
+    }
+
+    .ccw-dropdown-link-style-1 {
+        color: #4c4c4c
+    }</style>		</div>
+	
+
+    <div class="wrapper">
+        <!-- top navigation -->
+        <div class="grid-container">
+	<div class="column-24">
+		<!-- desktop navigation -->
+		<div class="tablet-hide">
+			<a class="top-nav-title" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=733&amp;catid=171&amp;Itemid=218" id="topnav" style="margin-right: 0;"><strong><span class="icon-idtlogo">&nbsp;</span> </strong> </a>
+			<nav aria-labelledby="topnav" class="top-nav-list" id="ccw-top-nav" role="navigation">
+				<!-- 導覽:產品 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent top-nav-link font-size-0 text-bold
+					dropdown-btn js-dropdown-toggle
+					padding-left-1 padding-right-1" tabindex="0">產品</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=734&amp;catid=137&amp;Itemid=187"><b>ArcGIS Online</b> <span class="meta">GIS線上製圖與分析的領導者</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=640&amp;catid=136&amp;Itemid=179"> <b>ArcGIS Pro</b> <span class="meta">新世代桌上型GIS軟體</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=626&amp;catid=138&amp;Itemid=188"> <b>ArcGIS Enterprise</b> <span class="meta">企業級空間資訊治理雲端平台</span> </a> <!--                         <a class="dropdown-link font-size-0 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=736&amp;catid=165&amp;Itemid=210"><b>ArcGIS Platform</b><span class="meta">多樣化即用型空間服務的PaaS平台</span></a> --><a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=737&amp;catid=167&amp;Itemid=175"><b>ArcGIS for Personal Use</b> <span class="meta">個人化專屬方案</span> </a></nav>
+				</div>
+				<!-- End of 導覽:產品 --><!-- 導覽:解決方案 --><!-- <div class="dropdown js-dropdown "> --><!-- extends side-nav --><!-- <button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1" tabindex="0">方案</button> --><!-- extends side-nav --><!--                     <nav class="dropdown-menu" role="menu"><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=738&amp;catid=139&amp;Itemid=180">外業調查 </a><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=739&amp;catid=140&amp;Itemid=181"> 遙測影像 </a><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=741&amp;catid=149&amp;Itemid=189"> 數位雙生 </a><a class="dropdown-link font-size--2 padding-left-1" href="/index.php?option=com_content&amp;view=article&amp;id=740&amp;catid=141&amp;Itemid=182"> 物聯網大數據 </a></nav> --><!-- </div> --><!-- End of 導覽:解決方案 --><!-- 導覽:學習 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn font-size-0 text-bold js-dropdown-toggle top-nav-link padding-left-1 padding-right-1" tabindex="0">學習</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=742&amp;catid=153&amp;Itemid=195"><b>開課時間</b> <span class="meta">實體課程時間表</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=743&amp;catid=155&amp;Itemid=213"> <b>座談影片</b> <span class="meta">深入探討ArcGIS各式主題</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="https://learn.arcgis.com/en/gallery/"> <b>Learn ArcGIS</b> <span class="meta">無時無刻都能自學(英文)</span> </a></nav>
+				</div>
+				<!-- End of 導覽:支援與服務 --><!-- 導覽:活動 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1 font-size-0 text-bold" tabindex="0">活動</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=744&amp;catid=157&amp;Itemid=199"><b>活動查詢</b> <span class="meta">當期活動資訊、歷屆活動回顧</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=730&amp;catid=156&amp;Itemid=200"> <b><i>StoryMaps</i> 競賽</b> <span class="meta">全國大專院校暨高中職 <i>StoryMap</i> 校園競賽</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="https://www.esri.com/en-us/about/events/index/overview"> <b>Esri 活動</b> <span class="meta">原廠所有活動查詢</span> </a></nav>
+				</div>
+				<!-- End of 導覽:活動 --><!-- 導覽:訊息 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1 font-size-0 text-bold" tabindex="0">訊息</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=168&amp;Itemid=215"><b>焦點訊息</b> <span class="meta">產業新聞、產品發表、重要公告</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="http://www.esri.tw/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=170&amp;Itemid=217"> <b>技術精選</b> <span class="meta">技術分享、實作經驗</span> </a> <a class="dropdown-link font-size-0 padding-left-1" href="https://www.esri.com/arcgis-blog/overview/"> <b>ArcGIS Blog</b> <span class="meta">ArcGIS 原廠部落格</span> </a></nav>
+				</div>
+				<!-- End of 導覽:訊息 --><!-- 導覽:關於 -->
+				<div class="dropdown js-dropdown ">
+					<!-- extends side-nav --><button aria-expanded="false" aria-haspopup="true" class="btn btn-transparent dropdown-btn js-dropdown-toggle top-nav-link padding-left-1 padding-right-1 font-size-0 text-bold" tabindex="0">關於</button><!-- extends side-nav -->
+					<nav class="dropdown-menu" role="menu">
+						<a class="dropdown-link font-size-0 padding-left-1 text-bold" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=746&amp;catid=161&amp;Itemid=204">關於互動 </a> <a class="dropdown-link font-size-0 padding-left-1 text-bold" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=756&amp;catid=161&amp;Itemid=204"> 公司據點 </a> <a class="dropdown-link font-size-0 padding-left-1 text-bold" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=747&amp;catid=162&amp;Itemid=205"> 關於Esri </a></nav>
+				</div>
+				<!-- End of 導覽:關於 --></nav>
+			<!-- End of Navgation --></div>
+		<!-- End of tablet-hide --><!-- tablet and mobile sized navigation -->
+		<div class="tablet-show top-nav-flex">
+			<!-- user specific actions -->
+			<nav aria-labelledby="usernav" class="top-nav-flex-list" role="navigation">
+				&nbsp;</nav>
+			<!-- logo / home -->
+			<header class="top-nav-flex-title" style="display: flex; align-items: center; justify-content: center;">
+				<div href="/" id="topnav-tablet-logo">
+					<span class="icon-idtlogo font-size-6">&nbsp;</span></div>
+			</header>
+			<!-- open primary navigation drawer -->
+			<nav aria-labelledby="topnav" class="top-nav-flex-list" role="navigation">
+				<a class="icon-ui-drag-horizontal right top-nav-link js-drawer-toggle" data-drawer="top-nav-tablet-sidebar" href="http://www.esri.tw/" style="font-size: 20px;">選單</a></nav>
+		</div>
+		<!-- End of tablet-show --></div>
+	<!-- End of Column-24 --></div>
+<!-- End of Naviation -->
+<style type="text/css">
+#ccw-top-nav .dropdown-link {
+        border-top: none;
+    }
+
+    .dropdown-link .meta {
+        display: block;
+        font-size: 0.9rem;
+    }</style>
+        <!-- End of top navigation -->
+
+        <!-- subnav -->
+        
+        <!-- End of subnav -->
+
+        <!-- banner -->
+        <!-- Banner -->
+<div class="ccw-banner">
+	<div class="grid-container">
+		<div class="column-24">
+			<h1 class="leader-1">
+				<strong>產品資訊</strong></h1>
+			<p class="trailer-1">
+				第一手產品資訊，讓您隨時掌握ArcGIS的即時脈動</p>
+		</div>
+	</div>
+</div>
+<!-- css -->
+<style type="text/css">
+.ccw-banner {
+        background-image: url(http://www.esri.tw/images/ccw/layout/banner/banner-news-lastnews.jpg);
+        color: white;
+    }
+
+    .ccw-banner h1 {
+        margin-bottom: 0px;
+    }</style>
+        <!-- End of banner -->
+
+        <!-- calcite web content -->
+        <div id="ccw-content"><div class="grid-container leader-1"><div id="ccw-post-content" class="column-14 tablet-column-12 pre-2"><h1><strong>ArcGIS Online Map Viewer 分析功能搶先看</strong></h1><p>14 四月, 2023<span class="padding-left-2">阿牛哥<span></span></span></p>
+<p>
+	<img alt="" class="hide" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/MV-map.png" style="width: 1920px; height: 1080px;"><span style="text-align: justify;">ArcGIS Online Map Viewer是一個快速、直觀且靈活的線上地圖編輯器。它使用最新的Web GIS技術 — ArcGIS API for JavaScript 4.x，因此擁有先進且高效的地理空間資料視覺化功能。隨著尖端功能不斷地被發佈出來，我們幾乎每天都會看到一個問題： Map Viewer何時提供分析工具？對此，我們有公告一個令人興奮的消息。隨著本次ArcGIS Online的更新，在Map Viewer中已經可以使用分析工具了！</span></p>
+<p>
+	<iframe allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="" class="kmsembed" frameborder="0" height="285" id="kmsembed-1_lg2oxmde" mozallowfullscreen="" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/0.html" title="Introducing Analysis In Map Viewer" webkitallowfullscreen="" width="100%"></iframe></p>
+<h2 id="ccw-header-01682137918007">
+	<strong>新的分析體驗</strong></h2>
+<p style="text-align: justify;">
+	在Map Viewer中，有一種新的方式可以使用分析。首先，從右側工具欄中選擇「分析」，即可打開分析窗格。分析窗格有兩個選項：「工具」和「歷程記錄」。</p>
+<p style="text-align: justify;">
+	<img alt="" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/temp01.jpg"></p>
+<h3 id="ccw-header-11682137918007">
+	<strong>分析工具</strong></h3>
+<p style="text-align: justify;">
+	Map Viewer中的工具包括圖徵分析工具和網格分析工具(網格分析功能需要有<a href="https://www.esri.com/en-us/arcgis/products/arcgis-image/options/arcgis-online">ArcGIS Image for ArcGIS Online</a>的User Type才能使用)。您可以根據分析類型來篩選分析工具，或透過關鍵字搜尋找到相關的工具。與Map Viewer Classic一樣，您仍然可以瀏覽並從同一類別中選擇分析工具。請注意，您可以根據工具圖示，區分工具是用於「圖徵分析」或是「網格分析」。</p>
+<p style="text-align: justify;">
+	<img alt="" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/tools.png" style="width: 548px; height: 626px;"></p>
+<p style="text-align: justify;">
+	我們在Map Viewer中增加了更多關於工具的詳細說明，讓它們更容易使用。例如，必要的參數會標有紅點。圖層增加後，您可以看到有多少筆圖徵紀錄會被分析。透過新的環境設定，您可以為分析結果的輸出圖層指定投影，而不必與輸入圖層相同。</p>
+<p style="text-align: justify;">
+	<img alt="" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/toolUI-1.png"></p>
+<p>
+	我們也讓您更容易在運行工具之前估算所需的點數。Map Viewer中的分析工具消耗的點數與Map Viewer Classic中的相同。</p>
+<p>
+	<img alt="" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/credits.gif" style="width: 332px; height: 136px;"></p>
+<p>
+	隨著2023年2月的首次發佈， Map Viewer已經涵蓋了使用者在Map Viewer Classic中，經常使用的圖徵分析工具。下面的影片展示了如何在 Map Viewer中使用追蹤下游(Trace Downstream)和豐富圖層(Enrich Layer)工具，預測熔岩流動並估計潛在影響。</p>
+<p>
+	<iframe allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="" class="kmsembed" frameborder="0" height="285" id="kmsembed-1_gvwp39yy" mozallowfullscreen="" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" scrolling="no" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/0(1).html" title="ArcGIS Online: Predicting lava flow" webkitallowfullscreen="" width="100%"></iframe></p>
+<p>
+	請注意，Map Viewer Classic中的一些工具已在Map Viewer中更名，以方便新用戶找到。例如，在Map Viewer Classic中，「Create Drive-Time Areas」工具現在在Map Viewer中稱為「Generate Travel Areas」。請參閱<a href="https://doc.arcgis.com/en/arcgis-online/analyze/perform-analysis-mv.htm#ESRI_SECTION1_DA94F2AEBEE748369DA099DC71EDD408">此說明</a>以獲取最新的工具更名清單和Map Viewer支援的工具列表。</p>
+<p>
+	對於在Map Viewer中使用ArcGIS Image擴充套件的用戶，您現在可以使用此版本中提供的24個網格分析工具；不過，網格函數和網格函數鏈編輯器目前在Map Viewer中尚未得到支援。未來版本中，卓越的分析功能將遷移到Map Viewer中。請閱讀「<a href="https://www.esri.com/arcgis-blog/products/arcgis-image-for-arcgis-online/imagery/whats-new-in-arcgis-image-for-arcgis-online-february-2023/">What’s New in ArcGIS Image for ArcGIS Online&nbsp;</a>」以獲取更多資訊。</p>
+<h3 class="text-head text-bold" id="ccw-header-21682137918007">
+	<strong>分析歷史記錄</strong></h3>
+<p>
+	在 Map Viewer 中，分析歷史記錄是一個令人興奮的新功能。對於那些熟悉資料分析和資料科學的人來說，他們知道分析是一個反覆運行的過程。分析人員經常需要多次重新運行相同的分析程序，以更改參數、查看警告和錯誤等。在 Map Viewer 中，每次您在 Web 地圖中運行工具時，關於該工具及其參數的訊息都會保存在歷史記錄中。所有的工具運行都會被增加到分析歷史記錄中，包括成功運行、失敗或取消的作業。您可以查看有關每個運行作業的詳細訊息。例如，工具生成的結果、工具何時完成、運行工具所需的時間、任何警告或錯誤消息以及工具的輸入參數，包括環境設定。您可以使用相同或修改過的參數重新打開和運行歷史中的任何工具。以下影片展示了如何使用分析歷史記錄簡化工作流程，以研究在不同交通狀況下消防局的響應時間。</p>
+<p>
+	<iframe allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="" class="kmsembed" frameborder="0" height="285" id="kmsembed-1_vaoknj08" mozallowfullscreen="" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" scrolling="no" src="./ArcGIS Online Map Viewer 分析功能搶先看_files/0(2).html" title="ArcGIS Online: Investigating fire station response time" webkitallowfullscreen="" width="100%"></iframe></p>
+<p>
+	儲存 Web 地圖後，分析歷史記錄也會與 Web 地圖一起存儲，並可與組織中的任何人共享。分析歷史記錄可幫助您更好地了解用於建立 Web 地圖項目中的資料和圖層的工作流程。此外，它是將您的線上分析過程與他人共享的一種絕佳方式。</p>
+<p>
+	現在就可以開始使用 Map Viewer 中的分析工具了！請記住，Map Viewer 中還提供了圖表，因此您可以使用資料探勘分析和視覺化分析來探索資料，以及用於解釋和傳達分析結果的圖表。在未來一年中，我們還將繼續增加更多的工具和功能。</p>
+<p>
+	像往常一樣，我們非常樂意聽取您的經驗和意見！</p>
+<p>
+	祝您分析愉快！</p>
+<hr>
+<p>
+	本文出處：Esri Blog | <a href="https://www.esri.com/arcgis-blog/products/arcgis-online/announcements/introducing-analysis-in-arcgis-online-map-viewer/">Introducing Analysis in ArcGIS Online Map Viewer</a></p>
+<p>
+	原文作者：<a href="https://www.esri.com/arcgis-blog/author/jzlange-2/">Jian Lange</a>、<a href="https://www.esri.com/arcgis-blog/author/cwalker-2/">Corinne Walker</a></p>
+<p>
+	中文譯者：阿牛哥</p>
+
+</div><div id="ccw-post-toc" class="column-6 tablet-hide"><h4 class="side-nav-title">目錄</h4><nav><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#ccw-header-01682137918007" class="side-nav-link padding-left-2">
+	新的分析體驗</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#ccw-header-11682137918007" class="side-nav-link padding-left-3">
+	分析工具</a><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#ccw-header-21682137918007" class="side-nav-link padding-left-3">
+	分析歷史記錄</a></nav><div class=" scroll-show padding-left-6 js-shim" data-top="50" data-sticky-id="134f78e2-c066-1cc1-9a8b-514c3e957fa6" style="top: 50px; visibility: hidden; display: none;"><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#" class="right btn btn-gray btn-clear">返回頂端</a></div><div class="js-sticky scroll-show padding-left-6" data-top="50" data-sticky-id="134f78e2-c066-1cc1-9a8b-514c3e957fa6" style="top: 50px;"><a href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#" class="right btn btn-gray btn-clear">返回頂端</a></div></div></div></div>
+        <!-- End of ccw-content -->
+
+        <!-- jdoc source content -->
+        <div id="jv-source-content"></div>
+        
+        <!-- sale dialog -->
+        <!-- Modal -->
+<div class="js-modal modal-overlay modifier-class" data-modal="contact-for-buy">
+	<div aria-labelledby="modal" class="modal-content column-18 phone-column-6" role="dialog">
+		<!-- close button --><a aria-label="close-modal" class="js-modal-toggle right" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#"><svg class="svg-icon" height="21" viewBox="0 0 32 32" width="21" xmlns="http://www.w3.org/2000/svg"> <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"></path> </svg> </a>
+		<h2 class="trailer-half text-bolder trailer-2">
+			詢價與購買</h2>
+		<p class="text-justify">
+			來電洽詢：&nbsp;&nbsp;02-26585858 分機 6661</p>
+		<p class="text-justify">
+			來信洽詢：&nbsp;&nbsp; <a class="market_mail" href="mailto:marketing@igis.com.tw">marketing@igis.com.tw</a></p>
+		<!-- content: desktop show -->
+		<p class="text-justify tablet-hide">
+			紛絲團洽詢： <a href="https://www.facebook.com/esri.tw" target="_blank">Facebook 官方粉絲團</a></p>
+		<!-- content: tablet and phone show -->
+		<p class="text-justify desktop-hide tablet-show">
+			紛絲團洽詢： <a href="fb://page/?id=435038589846254">Facebook 官方粉絲團</a></p>
+		<!-- close button -->
+		<div class="text-right">
+			<button class="btn js-modal-toggle">關閉視窗</button></div>
+	</div>
+</div>
+<!-- 課程報名對話視窗 -->
+<div class="js-modal modal-overlay" data-modal="contact-for-train">
+	<div aria-labelledby="modal" class="modal-content" role="dialog">
+		<div class="column-12">
+			<!-- 對話視窗右上角的 X --><a aria-label="close-modal" class="js-modal-toggle right" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#"><svg class="svg-icon" height="21" viewBox="0 0 32 32" width="21" xmlns="http://www.w3.org/2000/svg"> <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"></path> </svg> </a>
+			<h4 class="text-head text-bold">
+				報名方式</h4>
+			<p>
+				請聯絡業務人員 <b>盧小姐</b></p>
+			<p>
+				服務專線1： (02) 2658-5858 分機6632</p>
+			<p>
+				服務專線2： 0912-887-332</p>
+			<p>
+				服務信箱 ： <a class="sales_mail" href="mailto:sales@igis.com.tw">sales@igis.com.tw</a></p>
+			<button class="btn btn-default js-modal-toggle">關閉視窗</button></div>
+	</div>
+</div>
+<script>
+    ccw.addOnLoadEvent(function() {
+        $(".market_mail")
+            .text("marketing@igis.com.tw")
+            .attr("href", "mailto:marketing@igis.com.tw");
+        $(".sales_mail")
+            .text("sales@igis.com.tw")
+            .attr("href", "mailto:sales@igis.com.tw");
+        $(".support_mail")
+            .text("support@igis.com.tw")
+            .attr("href", "mailto:support@igis.com.tw");
+    });
+</script>
+        <!-- End of sale dialog -->
+        
+        
+        
+
+    </div><!-- End of wrapper -->
+
+    <!-- footer -->
+    <!-- footer -->
+<footer class="footer leader-3">
+	<div class="grid-container">
+		<!-- Logo & Social Section -->
+		<nav class="column-6 tablet-column-12">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size-5">
+					<strong><span class="icon-idtlogo">&nbsp;</span></strong>
+				</h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<strong>聯絡我們</strong></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">訂購專線</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">服務專線</a></li>
+				</ul>
+				<p class="leader-1 font-size--2">
+					<strong>追蹤我們</strong></p>
+				<section class="footer-social-nav">
+					&nbsp;</section>
+			</div>
+			<!-- Tablet and phone show -->
+			<div class="tablet-show tablet-column-10">
+				<div class="tablet-column-4">
+					<h6 class="font-size-5">
+						<strong><span class="icon-idtlogo">&nbsp;</span> </strong>
+					</h6>
+					<ul class="list-plain font-size--2">
+						<li>
+							<strong>聯絡我們</strong></li>
+						<li>
+							<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">訂購專線</a></li>
+						<li>
+							<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">服務專線</a></li>
+					</ul>
+				</div>
+				<div class="tablet-column-4">
+					&nbsp;</div>
+			</div>
+		</nav>
+		<nav class="column-6 tablet-column-6 leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>ArcGIS</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">About ArcGIS</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">ArcGIS Desktop</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">ArcGIS Enterprise</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">ArcGIS Online</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">Apps</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">如何購買</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="c59f439c-1a4b-d020-a607-c9348dde121a">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>ArcGIS</strong></h4>
+						<div class="accordion-content" id="c59f439c-1a4b-d020-a607-c9348dde121a">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">About ArcGIS</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">ArcGIS Desktop</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">ArcGIS Enterprise</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">ArcGIS Online</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">Apps</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">如何購買</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+		<!-- 社群 -->
+		<nav class="column-6 tablet-column-6 leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>社群</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="https://community.esri.com/">Esri 社群 (GeoNet)</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/en-us/about/events/index/overview">Esri 活動</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">idt 活動</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/arcgis-blog/overview/">ArcGIS Blog</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="232fb8f9-c256-2921-b7b1-dd1c54718dd0">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>社群</strong></h4>
+						<div class="accordion-content" id="232fb8f9-c256-2921-b7b1-dd1c54718dd0">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://community.esri.com/">Esri 社群 (GeoNet)</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/en-us/about/events/index/overview">Esri 活動</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">idt 活動</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/arcgis-blog/overview/">ArcGIS Blog</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+		<!-- 瞭解 GIS -->
+		<nav class="column-6 tablet-column-6 leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>瞭解 GIS</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">什麼是 GIS?</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">教育訓練</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/about/newsroom/publications/wherenext/">Maps Web Love</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/about/newsroom/blog/">Esri 部落格</a></li>
+					<li>
+						<a class="link-off-black" href="https://www.esri.com/about/newsroom/publications/wherenext/">WhereNext 雜誌</a></li>
+					<li>
+						<a class="link-off-black" href="https://learn-arcgis-learngis.hub.arcgis.com/">Learn ArcGIS</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="014a6557-17dd-afd9-2602-dce5a41d3bf4">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>瞭解 GIS</strong></h4>
+						<div class="accordion-content" id="014a6557-17dd-afd9-2602-dce5a41d3bf4">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">什麼是 GIS?</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">教育訓練</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/about/newsroom/publications/wherenext/">Maps Web Love</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/about/newsroom/blog/">Esri 部落格</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://www.esri.com/about/newsroom/publications/wherenext/">WhereNext 雜誌</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="https://learn-arcgis-learngis.hub.arcgis.com/">Learn ArcGIS</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+		<!-- 公司 -->
+		<nav class="column-6 tablet-column-6  leader-1">
+			<!-- Desktop show -->
+			<div class="tablet-hide">
+				<h6 class="font-size--2">
+					<strong>公司</strong></h6>
+				<ul class="list-plain font-size--2">
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">了解互動</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">了解Esri</a></li>
+					<li>
+						<a class="link-off-black" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">聯絡我們</a></li>
+				</ul>
+			</div>
+			<!-- Tablet & Mobile show -->
+			<div class="tablet-show">
+				<aside class="js-accordion accordion" aria-live="polite" role="tablist">
+					<div class="accordion-section">
+						<h4 class="accordion-title" role="tab" tabindex="0" aria-controls="d8fed149-6c96-beb6-8347-43c527570ca9">
+							<span class="accordion-icon"><svg class="svg-icon" height="14" viewBox="0 0 32 32" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"></path></svg> </span> <strong>公司</strong></h4>
+						<div class="accordion-content" id="d8fed149-6c96-beb6-8347-43c527570ca9">
+							<ul class="list-plain font-size--2">
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">了解互動</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">了解Esri</a></li>
+								<li>
+									<a class="link-off-black ccw-footer-tablet-menu-link" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">聯絡我們</a></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</nav>
+	</div>
+	<div class="grid-container">
+		<div class="column-24">
+			<hr>
+			<div class="column-8 tablet-hide">
+				<p class="btn">
+					繁體中文&nbsp;</p>
+			</div>
+			<div class="column-16 font-size--2">
+				<a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">隱私權政策</a> <a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">法律聲明</a> <a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">網站地圖</a> <a class="link-off-black margin-right-4 trailer-2" href="http://www.esri.tw/index.php?option=com_content&amp;view=article&amp;id=789:arcgis-online-map-viewer-&amp;catid=168:ccw-news-lastnews&amp;Itemid=215#">Terms and Conditions</a></div>
+		</div>
+	</div>
+	<!-- End of grid-container --></footer>
+<!-- End of footer -->
+   
+    <!-- interactive patterns need to be initialized -->
+    <script>
+       ccw.addOnLoadEvent(calcite.init);
+    </script>
+
+</body></html>
